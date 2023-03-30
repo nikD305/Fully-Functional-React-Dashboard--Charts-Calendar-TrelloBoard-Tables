@@ -3,6 +3,27 @@ import * as echarts from 'echarts'
 const StatisticsChart = () => {
 
   const option ={
+    // color: ['black'] ,
+
+
+    //To save Image
+    toolbox:{
+      feature:{
+         saveAsImage:{},
+      }
+    },
+    //  To make every axis value of line visible on hover we use tooltip
+    tooltip:{
+        trigger:"axis",
+        axisPointer:{
+          type:"cross"
+        },
+        backgroundColor:"rgba(0,0,0,0.59)",
+        borderWidth:0
+    },
+
+
+
     xAxis:[
       {
         type:"category",
@@ -38,18 +59,24 @@ const StatisticsChart = () => {
 
         areaStyle:{
           opactity:.5,
-          color: new echarts.graphic.LinearGradient(0,0,0,1,[
+          color: new echarts.graphic.LinearGradient(0,0,0,0.8,[
             {
               offset:0,
-              color:"rgb(255,191,0)"
+              color:"#FE4C00"
             },
             {
               offset:1,
-              color:"#F450D3"
+              color:"rgba(255,144,70,0.1)"
             }
            ]),
-        }
-,
+        },
+      emphasis:{
+       focus:"series"
+      } , 
+      
+  
+
+
 
         // Bar
         itemStyle: {

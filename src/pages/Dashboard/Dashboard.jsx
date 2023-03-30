@@ -1,4 +1,5 @@
 import React from 'react'
+import Orders from '../../components/orders/Orders'
 import Statistics from '../../components/statistics/Statistics'
 import { cardsData, groupNumber } from '../../data'
 import css from './Dashboard.module.css'
@@ -49,9 +50,9 @@ const Dashboard = () => {
 
 
 {/* right */}
-      <div className={css.orders}>
-orders
-     </div>
+      
+<Orders/>
+    
 
 
     </div>
