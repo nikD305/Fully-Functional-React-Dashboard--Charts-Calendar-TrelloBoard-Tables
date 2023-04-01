@@ -22,7 +22,7 @@ const Orders = () => {
 
                     <div>
                         <span>{order.name}</span>
-                        <span>{order.change}</span>
+                        <span>+{order.change}</span>
                     </div>
                     <div>
                         <span>{order.type}</span>

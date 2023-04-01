@@ -6,7 +6,8 @@ import * as echarts from "echarts";
 
 const OrdersPieChart = () => {
   const option = {
-    color:[
+    color:[  
+      // we have 4 data so used 4 different colors
               new echarts.graphic.LinearGradient(0,0,0,1,[
                 {
                   offset:0,

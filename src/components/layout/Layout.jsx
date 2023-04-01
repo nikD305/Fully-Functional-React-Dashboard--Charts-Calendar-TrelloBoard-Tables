@@ -13,7 +13,7 @@ const {pathname} = useLocation()
     <div className={css.container}>
      <Sidebar/>
 
-{/* here we make Dashboard as default route with this condition , here Sidebar and Layout are both fixed and rest all are its childeren so when we start the app we need any children as defauld so here we are setting dashboard as default */}
+{/* here we make Dashboard as default route with this condition , here Sidebar and Layout are both fixed and rest all are its childeren so when we start the app we need any children as default so here we are setting dashboard as default */}
 {pathname === '/' && <Navigate to='/dashboard' />}
 
 
