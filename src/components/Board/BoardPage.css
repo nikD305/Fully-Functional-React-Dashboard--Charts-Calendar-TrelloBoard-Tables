@@ -50,3 +50,14 @@
     border: none;
     cursor: pointer;
 }
+
+.column-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 8px;
+}
+
+.column-header>svg{
+    cursor: pointer;
+}

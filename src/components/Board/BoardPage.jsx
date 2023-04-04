@@ -1,9 +1,12 @@
 import Board, {moveCard,moveColumn, removeCard,addCard} from '@asseinfo/react-kanban'
 import '@asseinfo/react-kanban/dist/styles.css'
-import useBoard from '../../stores/BoardPage'
+// import useBoard from '../../stores/BoardPagee'
+import useBoard from '../../stores/BoardPagee'
 import './BoardPage.css'
 import {RxCross2} from 'react-icons/rx'
-
+import {IoMdAdd} from 'react-icons/io'
+import AddCardModal from '../AddCardModal/AddCardModal'
+import { useState } from 'react'
 const BoardPage = () => {
 const {board , setBoard} = useBoard();
 
@@ -68,8 +71,8 @@ const getGradient = (card) =>{
       onCardDragEnd={handleCardMove}
       onColumnDragEnd={handleColumnMove}
       
-      //custom card , the card object i.e from boardData in index.js from cards what objecet we have that becomes props, here we have cards[{id,title, description}] so here id,title,description will be props for renderCard
-    //here we are creating a card similar to previous design so it loos similar 
+      //custom card(just rendered all the objects) , the card object i.e from boardData in index.js from cards what objecet we have that becomes props, here we have cards[{id,title, description}] so here id,title,description will be props for renderCard
+    //here we are creating a card similar to previous design so it loos similar ,adn rendering all the card from board by mapping it,
       renderCard = {(props)=>(
         <div className='kanban-card' style={getGradient(props)}>
           <div>
@@ -97,7 +100,52 @@ const getGradient = (card) =>{
         </div>
       )}
       
+
+      // Previously above renderCard gave card as props, now here in renderColumnHeader it will give whole column as props(id,title,cards)
+      renderColumnHeader = {(props)=>{
+
+        const [modalOpened , setModalOpened] = useState(false)
+         
+        const handleCardAdd = (title,detail) =>{
+          const card = {
+            id: new Date().getTime(),
+            title,
+            description:detail
+              }
+        
+              // here we are by calling addCard with full board(which contains all columns),props(contains aparticular column where we want to add card) , card(the one which we want to add)
+        const updateBoard = addCard(board,props,card)
+
+        // send the updated columns values to zustand to update
+        setBoard(updateBoard)
+
+        // to close the pop-up
+        setModalOpened(false)
+
+        }
+        
+      return (
+        <div className='column-header'>
+          <span>{props.title}</span>
+          <IoMdAdd 
+          color='white'
+          size={25}
+          title="Add card"
+          onClick={()=>setModalOpened(true)}
+          />
+          <AddCardModal
+          // make visible ON and OFF
+          visible={modalOpened}
+          // Closes modal when clicked on Background
+          onClose={()=>setModalOpened(false)}
+
+          handleCardAdd={handleCardAdd}
+          />
+        </div>
+      )
+     }}
       >
+
 {board}
       </Board>
 
