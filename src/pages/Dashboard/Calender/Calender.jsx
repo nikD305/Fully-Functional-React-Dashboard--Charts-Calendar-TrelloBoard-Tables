@@ -15,6 +15,7 @@ const Calender = () => {
 
 
   const handleEvents = async (events)=>{
+
     await Promise.resolve(setCurrentEvents(events))
   }
 
@@ -71,7 +72,7 @@ const Calender = () => {
       // initialEvents={INITIAL_EVENTS}
       initialEvents={currentEvents}
 
-      // if any changes like add/delete then it is runned with updated set of events as arguments(events)
+      // if any changes like add/delete then it is runned with updated set of events as arguments(events) i.e all the previous elements and newly added element and it will go to zustand store and update the array
       eventsSet={handleEvents}
 
       // when calnder is clicked this function in runned

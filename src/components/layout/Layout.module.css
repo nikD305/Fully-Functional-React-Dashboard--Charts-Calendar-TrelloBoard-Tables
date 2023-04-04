@@ -85,9 +85,9 @@
     margin: auto;
     display: flex;
     height: 100%;
-    align-items: center;
+    /* align-items: center; */
     /* do align center and mt=-4px */
-    margin-top: -4rem;
+    margin-top: 4rem;
 
 }
 .content>div{
