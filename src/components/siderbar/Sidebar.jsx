@@ -7,7 +7,7 @@ import {NavLink} from'react-router-dom'
 const Sidebar = () => {
   return (
     <div className={css.container}>
-            <img src="./logo.png" alt="logo" className={css.logo} />     
+            <img src="https://cdn.dribbble.com/users/60166/screenshots/15558186/media/fa6bd0b894439dd443fa89956d74719b.jpg?compress=1&resize=400x300&vertical=top" alt="logo" className={css.logo} />     
             <div className={css.menu}>
                 <NavLink to="dashboard" className={css.item} title={"Dashboard"}>
 

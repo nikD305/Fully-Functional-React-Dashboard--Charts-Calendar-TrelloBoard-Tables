@@ -10,8 +10,9 @@
 }
 
 .logo{
-    width: 45%;
+    width: 55%;
     max-width: 5rem;
+    border-radius: 30%;
 
 }
 

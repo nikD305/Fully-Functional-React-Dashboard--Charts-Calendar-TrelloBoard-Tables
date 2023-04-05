@@ -37,10 +37,9 @@ const {pathname} = useLocation()
 
 <div className={css.profile}>
 
-    <img src="./profile.png" alt="person image" />
+    {/* <img src="./eren.jpg" alt="person image" /> */}
     <div className={css.details}>
-        <span>Ninja</span>
-        <span>Ninjaworrior@hustler.com</span>
+        
     </div>
 </div>
 

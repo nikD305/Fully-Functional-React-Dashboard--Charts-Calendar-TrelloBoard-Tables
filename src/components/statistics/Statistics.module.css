@@ -8,6 +8,17 @@
 /* .container>:nth-child(1){
     margin-top: -300px;
 } */
+
+.container>:nth-child(1){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.container>:nth-child(1)>:nth-child(2)>svg{
+    height: 50px;
+    width: 50px;
+}
 .title{
     font-size: 1.2rem;
     font-weight: 500;

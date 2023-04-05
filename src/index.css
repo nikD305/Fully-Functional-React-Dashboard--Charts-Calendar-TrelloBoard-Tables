@@ -2,13 +2,9 @@
   --transparent-black: rgba(0, 0, 0, 0.294);
   --black: #111111;
   --grey: rgba(255, 255, 255, 0.597);
-  --orange: #ff805d;
+  --orange:linear-gradient(to right, #8a2be2, #00ced1);
   --green: rgb(54, 234, 54);
-  --orange-gradient: linear-gradient(
-    268.35deg,
-    rgba(255, 70, 70, 0.99) 3.47%,
-    rgba(255, 114, 70, 0.99) 60.18%
-  );
+  --orange-gradient: linear-gradient(to right, #8a2be2, #00ced1);
   
 }
 
@@ -40,7 +36,7 @@ body {
   position: absolute;
   width: 200px;
   height: 200px;
-  background: #ff5d5d;
+  background: #5dbeff;
   filter: blur(90px);
 }
 .gradient-orange {

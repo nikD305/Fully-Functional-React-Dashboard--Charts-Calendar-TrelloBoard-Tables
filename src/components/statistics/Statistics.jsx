@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import css from "./Statistics.module.css";
 import { BsArrowUpShort } from "react-icons/bs";
 import { groupNumber } from "../../data";
+import ToggleOffIcon from '@mui/icons-material/ToggleOff';
+import ToggleOnIcon from '@mui/icons-material/ToggleOn';
 
 import StatisticsChart from '../statisticschart/StatisticsChart'
 const Statistics = () => {
+
+  const [on , setOn] = useState(false)
   return (
     <div className={`${css.container} theme-container`}>
 
+<div>
 
       <span className={css.title}>Overview Statistics</span>
+      <div onClick={()=>setOn(!on)}>
+
+      {on? <ToggleOnIcon/> :  <ToggleOffIcon/>}
+      </div>
+    
+</div>
       <div className={`${css.cards} grey-container`}>
         <div>
           <div className={css.arrowIcon}>
@@ -38,7 +49,7 @@ const Statistics = () => {
       </div>
   
 
-<StatisticsChart/>
+<StatisticsChart on={on}/>
     </div>
 
   );

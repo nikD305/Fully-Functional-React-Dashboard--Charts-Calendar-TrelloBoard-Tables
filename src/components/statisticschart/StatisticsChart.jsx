@@ -1,6 +1,6 @@
 import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts'
-const StatisticsChart = () => {
+const StatisticsChart = ({on}) => {
 
   const option ={
     // color: ['black'] ,
@@ -41,35 +41,59 @@ const StatisticsChart = () => {
     ],
     series:[
       {
-        type:"line",
+        type:on? "bar":"line",
         smooth:true,
-        lineStyle:{
-           color: new echarts.graphic.LinearGradient(0,0,0,1,[
+        lineStyle: {
+          color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
             {
-              offset:0,
-              color:"rgb(255,191,0)"
+              offset: 0,
+              color: '#8a2be2', // dark purple
             },
             {
-              offset:1,
-              color:"#F450D3"
-            }
-           ]),
-           width:4
-        },
-
-        areaStyle:{
-          opactity:.5,
-          color: new echarts.graphic.LinearGradient(0,0,0,0.8,[
-            {
-              offset:0,
-              color:"#FE4C00"
+              offset: 0.25,
+              color: '#4b0082', // deep blue
             },
             {
-              offset:1,
-              color:"rgba(255,144,70,0.1)"
-            }
-           ]),
+              offset: 0.5,
+              color: '#00bfff', // sky blue
+            },
+            {
+              offset: 0.75,
+              color: '#1e90ff', // dodger blue
+            },
+            {
+              offset: 1,
+              color: '#00ced1', // dark turquoise
+            },
+          ]),
+          width: 4,
         },
+        areaStyle: {
+          opacity: 0.5,
+          color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
+            {
+              offset: 0,
+              color: '#8a2be2', // dark purple
+            },
+            {
+              offset: 0.25,
+              color: '#4b0082', // deep blue
+            },
+            {
+              offset: 0.5,
+              color: '#00bfff', // sky blue
+            },
+            {
+              offset: 0.75,
+              color: '#1e90ff', // dodger blue
+            },
+            {
+              offset: 1,
+              color: '#00ced1', // dark turquoise
+            },
+          ]),
+        },
+        
       emphasis:{
        focus:"series"
       } , 
@@ -80,17 +104,30 @@ const StatisticsChart = () => {
 
         // Bar
         itemStyle: {
-          color: new echarts.graphic.LinearGradient(0,0,0,1,[
+          color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [
             {
-              offset:0,
-              color:"rgb(255,191,0)"
+              offset: 0,
+              color: '#8a2be2', // dark purple
             },
             {
-              offset:1,
-              color:"#F450D3"
-            }
-           ]),
+              offset: 0.25,
+              color: '#4b0082', // deep blue
+            },
+            {
+              offset: 0.5,
+              color: '#00bfff', // sky blue
+            },
+            {
+              offset: 0.75,
+              color: '#1e90ff', // dodger blue
+            },
+            {
+              offset: 1,
+              color: '#00ced1', // dark turquoise
+            },
+          ]),
         },
+        
         // Bar
 
 
